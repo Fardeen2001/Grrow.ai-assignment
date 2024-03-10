@@ -1,10 +1,11 @@
 "use client";
 import { addResponses } from "@/Redux/messageSlice";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MdArrowUpward } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { isUserLoggedIn } from "@/Redux/authslice";
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
@@ -12,7 +13,10 @@ const Home = () => {
   const responses = useSelector((state) => state.responses.messages);
   const dispatch = useDispatch();
   const route = useRouter();
-
+  useEffect(() => {
+    const userLoggedInToken = localStorage.getItem("token") ? true : false;
+    dispatch(isUserLoggedIn(userLoggedInToken));
+  }, []);
   const userResponse = async (e) => {
     e.preventDefault();
     if (!isLoggedIn) {
