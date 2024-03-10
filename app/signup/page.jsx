@@ -21,7 +21,7 @@ const SignUp = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
+      const res = await fetch("/api/signup", {
         method: "POST",
         body: JSON.stringify({
           name: name,
