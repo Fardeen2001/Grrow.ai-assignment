@@ -12,7 +12,7 @@ const NavBar = () => {
   const isLoggedIn = useSelector((state) => state.auth.token);
   const route = useRouter();
   return (
-    <div className="flex flex-row justify-between p-5 items-center  shadow-2xl sticky top-0 z-10 bg-white text-black">
+    <div className="flex flex-row justify-between p-4 items-center  shadow-2xl sticky top-0 z-10 bg-white text-black">
       <div className="logo">
         <Link href={"/"}>
           <h1 className="font-bold text-xl">GRROW.AI</h1>
