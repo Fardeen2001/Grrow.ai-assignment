@@ -56,7 +56,7 @@ const NavBar = () => {
         {!isLoggedIn && (
           <Link href={"/login"}>
             {" "}
-            <button className="bg-slate-200 p-2 mx-1 rounded-lg font-bold hover:text-slate-50 hover:bg-slate-800">
+            <button className="bg-slate-200 p-2 mx-2 rounded-lg font-bold hover:text-slate-50 hover:bg-slate-800">
               Login
             </button>
           </Link>
